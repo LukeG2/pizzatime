@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+
+<style>
+
+.verringern {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 420px 320px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 80px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.erhöhen {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 420px 320px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 80px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.zeit {
+  background-color: hwb(0 59% 12%);
+  border: none;
+  color: white;
+  padding: 420px 320px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 80px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.anzahl {
+  background-color: hwb(0 59% 12%);
+  border: none;
+  color: white;
+  padding: 420px 320px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 80px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.ofen1 {
+  background-color: hwb(0 59% 12%);
+  border: none;
+  color: white;
+  padding: 420px 320px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 80px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.ofen2 {
+  background-color: hwb(0 59% 12%);
+  border: none;
+  color: white;
+  padding: 420px 320px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 80px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+
+<script>
+
+  var clicks = 0;
+
+ function pizzabestellung() {
+    //counter wird um 1 erhöht
+    clicks += 1;
+    document.getElementById("counter").innerHTML = clicks;
+
+ }
+
+ function pizzalieferung() {
+    //counter wird um 1 verringert
+    clicks -= 1;
+    document.getElementById("counter").innerHTML = clicks;
+
+ }
+
+ function normaltime () {
+    var initialcount = 0;
+
+    initialcount = document.getElementById("counter").innerHTML;
+
+    console.log(initialcount);
+
+    var half = initialcount / 2;
+    let minute = Math.ceil(half);
+    var initialtime = minute * 7;
+
+    console.log(initialtime);
+
+    document.getElementById("initialtime").innerHTML=initialtime;
+    document.getElementById("counter").innerHTML = initialcount;
+ }
+
+function countup() {
+  pizzabestellung();
+  normaltime();
+}
+
+function countdown() {
+  pizzalieferung();
+  normaltime();
+}
+
+</script>
+
+</head> 
+
+<body>
+
+<table>
+  <tr>
+    <td>
+      <button class="zeit">Geschätzte Wartezeit: <p id="initialtime">0</p>min</button>
+    </td>
+    <td>
+      <button class="anzahl">Anzahl fehlender Pizzen: <p id="counter">0</p></button>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <button class="erhöhen" onclick="countup()">Pizzacounter erhöhen</button>
+    </td>
+    <td>
+      <button class="verringern" onclick="countdown()">Pizzacounter verringern</button>
+    </td>
+  </tr>
+</table>
+<p id= ></p>
+
+</body>
+
+</html> 
